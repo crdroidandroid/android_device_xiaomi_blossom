@@ -80,6 +80,10 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
             grep -q "libutils-v32.so" "${2}" || "${PATCHELF}" --add-needed "libutils-v32.so" "${2}"
             ;;
+        vendor/lib/libsysenv.so | vendor/lib*/libnvram.so)
+            [ "$2" = "" ] && return 0
+            grep -q "libshim_base.so" "${2}" || "${PATCHELF}" --add-needed "libshim_base.so" "${2}"
+            ;;
         *)
             return 1
             ;;
