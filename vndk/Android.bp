@@ -6,17 +6,13 @@
 
 cc_prebuilt_library_shared {
 	name: "libui-v32",
-	shared_libs: [
-		"android.hardware.graphics.common-V2-ndk_platform-v32",
-		"android.hardware.common-V2-ndk_platform-v32",
-	],
 	strip: {
-			none: true,
+	    none: true,
 	},
 	target: {
-			android_arm: {
-					srcs: ["libui-v32.so"],
-			},
+	    android_arm: {
+		srcs: ["libui-v32.so"],
+            },
 	},
 	compile_multilib: "32",
 	check_elf_files: false,
