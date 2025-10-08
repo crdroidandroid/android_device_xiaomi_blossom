@@ -81,8 +81,29 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "init.mt6765.volte.rc",
-    src: "etc/init.mt6765.volte.rc",
+    name: "init.angelica.volte.rc",
+    src: "etc/init.angelica.volte.rc",
+    relative_install_path: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.angelican.volte.rc",
+    src: "etc/init.angelican.volte.rc",
+    relative_install_path: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.angelicain.volte.rc",
+    src: "etc/init.angelicain.volte.rc",
+    relative_install_path: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.cattail.volte.rc",
+    src: "etc/init.cattail.volte.rc",
     relative_install_path: "init/hw",
     vendor: true,
 }

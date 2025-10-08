@@ -1,0 +1,4 @@
+on early-init
+    mount none /vendor/bin/volte_imcb.angelicain /vendor/bin/volte_imcb bind
+    mount none /vendor/bin/volte_stack.angelicain /vendor/bin/volte_stack bind
+    mount none /vendor/bin/volte_ua.angelicain /vendor/bin/volte_ua bind
