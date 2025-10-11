@@ -622,5 +622,7 @@
 
     <!-- Disable bluetooth by default -->
     <bool name="def_bluetooth_on">false</bool>
-
+    <!-- Total physical SIM slots (pSIM + eSIM), may differ from number of logical modems. -->
+    <integer name="config_num_physical_slots">2</integer>
+ 
 </resources>
