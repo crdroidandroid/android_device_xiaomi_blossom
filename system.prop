@@ -14,13 +14,10 @@ ro.camera.sound.forced=0
 ro.charger.enable_suspend=true
 
 # Dalvik
-dalvik.vm.dex2oat-cpu-set=4,5,6,7
-dalvik.vm.dex2oat-threads=4
 dalvik.vm.boot-dex2oat-cpu-set=4,5,6,7
 dalvik.vm.boot-dex2oat-threads=4
 dalvik.vm.image-dex2oat-cpu-set=4,5,6,7
 dalvik.vm.image-dex2oat-threads=4
-dalvik.vm.dex2oat64.enabled=true
 
 # Display
 persist.sys.df.extcolor.proc=0
