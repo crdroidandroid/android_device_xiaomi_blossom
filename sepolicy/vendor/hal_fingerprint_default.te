@@ -15,5 +15,5 @@ allow hal_fingerprint_default proc_ppm:dir r_dir_perms;
 allow hal_fingerprint_default proc_ppm:file rw_file_perms;
 
 # Fingerprints 
-allow hal_fingerprint_default sysfs_fingerprint:file { read write getattr open };
-allow hal_fingerprint_default sysfs_fingerprint:dir { search read open getattr };
+allow hal_fingerprint_default sysfs_fingerprint:file rw_file_perms;
+allow hal_fingerprint_default sysfs_fingerprint:dir r_dir_perms;
