@@ -142,7 +142,7 @@ lib/libmtk_vt_service.so
 lib/libmtk_vt_wrapper.so
 lib/libmtkavenhancements.so
 lib/libsignal.so
-lib/libsink.so
+lib/libsink-mtk.so
 lib/libsource.so
 lib/libvcodec_cap.so
 lib/libvcodec_capenc.so
