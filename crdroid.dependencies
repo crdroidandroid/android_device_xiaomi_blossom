@@ -1,0 +1,22 @@
+[
+  {
+    "repository": "crdroidandroid/android_device_xiaomi_blossom",
+    "target_path": "device/xiaomi/blossom",
+  },
+  {
+    "repository": "Jayedkhan800/android_device_mediatek_sepolicy_vndr",
+    "target_path": "device/mediatek/sepolicy_vndr",
+  },
+  {
+    "repository": "Jayedkhan800/android_hardware_mediatek",
+    "target_path": "hardware/mediatek",
+  },
+  {
+    "repository": "crdroidandroid/device_xiaomi_blossom-kernel",
+    "target_path": "device/xiaomi/blossom-kernel",
+  },
+  {
+    "repository": "crdroidandroid/proprietary_vendor_xiaomi_blossom",
+    "target_path": "vendor/xiaomi/blossom",
+  }
+]

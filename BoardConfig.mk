@@ -10,6 +10,13 @@ BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 
 DEVICE_PATH := device/xiaomi/blossom
 
+# Kernel
+TARGET_KERNEL_SOURCE := kernel/xiaomi/blossom
+BOARD_PREBUILT_KERNEL_HEADERS := device/xiaomi/blossom-kernel/headers
+
+# Create symlink for kernel headers if it doesn't exist
+$(shell mkdir -p kernel/xiaomi && ln -sfn ../../device/xiaomi/blossom-kernel/headers kernel/xiaomi/blossom)
+
 # OTA
 TARGET_OTA_ASSERT_DEVICE := dandelion,angelica,angelican,cattail,angelicain,blossom
 AB_OTA_UPDATER := false
