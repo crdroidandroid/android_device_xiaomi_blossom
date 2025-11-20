@@ -51,14 +51,4 @@ public:
         mCallback(AudioTrack::EVENT_CAN_WRITE_MORE_DATA, mData, static_cast<void*>(&copy));
         return copy.size();
     }
-};    mCallback(AudioTrack::EVENT_STREAM_END, mData, nullptr);
-  }
-  size_t onCanWriteMoreData(const AudioTrack::Buffer &buffer) override {
-    AudioTrack::Buffer copy = buffer;
-    mCallback(AudioTrack::EVENT_CAN_WRITE_MORE_DATA, mData,
-              static_cast<void *>(&copy));
-    return copy.size();
-  }
 };
-
-} // namespace
