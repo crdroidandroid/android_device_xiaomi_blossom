@@ -198,8 +198,6 @@ DEVICE_MATRIX_FILE += $(DEVICE_PATH)/compatibility_matrix.xml
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/framework_compatibility_matrix.xml
 
-# Wi-Fi
-WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 
 # SELinux
 include device/mediatek/sepolicy_vndr/SEPolicy.mk
