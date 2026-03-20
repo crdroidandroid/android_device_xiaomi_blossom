@@ -25,3 +25,7 @@ PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BRAND := Redmi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    BuildFingerprint="google/mustang/mustang:16/BD3A.251005.003.W3/14147046:user/release-keys"
