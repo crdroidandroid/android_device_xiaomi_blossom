@@ -7,6 +7,8 @@ ro.vendor.have_aeev_feature=0
 # APU
 debug.mtk_tflite.target_nnapi=29
 
+debug.stagefright.ccodec=1
+
 # Audio
 ro.vendor.mtk_audio_alac_support=1
 ro.vendor.mtk_audio_ape_support=1
