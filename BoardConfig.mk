@@ -17,6 +17,9 @@ BOARD_PREBUILT_KERNEL_HEADERS := device/xiaomi/blossom-kernel/headers
 # Create symlink for kernel headers if it doesn't exist
 $(shell mkdir -p kernel/xiaomi && ln -sfn ../../device/xiaomi/blossom-kernel/headers kernel/xiaomi/blossom)
 
+# MIUI CAMERA
+include vendor/xiaomi/miuicamera/SEPolicy.mk
+
 # OTA
 TARGET_OTA_ASSERT_DEVICE := dandelion,angelica,angelican,cattail,angelicain,blossom
 AB_OTA_UPDATER := false
