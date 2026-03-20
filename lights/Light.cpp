@@ -21,6 +21,7 @@
 #include <fstream>
 
 #define LCD_LED         "/sys/class/leds/lcd-backlight/"
+#define CAMERA_LED      "/sys/class/leds/torch/"
 
 #define BRIGHTNESS      "brightness"
 #define MAX_BRIGHTNESS  "max_brightness"
@@ -48,8 +49,6 @@ static void set(std::string path, int value) {
  * Read max brightness from path and close file.
  */
 static int getMaxBrightness(std::string path) {
-    // T25 start - override max brightness
-    /*
     std::ifstream file(path);
     int value;
 
@@ -59,10 +58,6 @@ static int getMaxBrightness(std::string path) {
     }
 
     file >> value;
-    */
-    // overridden due to faulty behavior
-    int value = 1023;
-    // T25 end
     return value;
 }
 
@@ -92,8 +87,7 @@ static inline uint32_t scaleBrightness(uint32_t brightness, uint32_t maxBrightne
         return 0;
     }
 
-    // T25 - reduce min brightness to 13
-    return (brightness - 1) * (maxBrightness - 13) / (0xFF - 1) + 13;
+    return (brightness - 1) * (maxBrightness - 6) / (0xFF - 1) + 6;
 }
 
 static inline uint32_t getScaledBrightness(const HwLightState& state, uint32_t maxBrightness) {
@@ -105,9 +99,22 @@ static void handleBacklight(const HwLightState& state) {
     set(LCD_LED BRIGHTNESS, brightness);
 }
 
+static void handleCamera(const HwLightState& state) {
+    uint32_t brightness = getBrightness(state);
+    uint32_t maxBrightness = getMaxBrightness(CAMERA_LED MAX_BRIGHTNESS);
+    
+    if (brightness == 0) {
+        set(CAMERA_LED BRIGHTNESS, 0);
+    } else {
+        uint32_t scaledBrightness = scaleBrightness(brightness, maxBrightness);
+        set(CAMERA_LED BRIGHTNESS, scaledBrightness);
+    }
+}
+
 /* Keep sorted in the order of importance. */
 static std::vector<LightType> backends = {
     LightType::BACKLIGHT,
+    LightType::CAMERA,
 };
 
 }  // anonymous namespace
@@ -121,6 +128,9 @@ ndk::ScopedAStatus Lights::setLightState(int id, const HwLightState& state) {
     switch(id) {
         case (int) LightType::BACKLIGHT:
             handleBacklight(state);
+            return ndk::ScopedAStatus::ok();
+        case (int) LightType::CAMERA:
+            handleCamera(state);
             return ndk::ScopedAStatus::ok();
         default:
             return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
@@ -146,3 +156,4 @@ ndk::ScopedAStatus Lights::getLights(std::vector<HwLight>* lights) {
 }  // namespace hardware
 }  // namespace android
 }  // namespace aidl
+
