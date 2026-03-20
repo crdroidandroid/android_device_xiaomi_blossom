@@ -47,3 +47,6 @@
 /(system\/vendor|vendor)/bin/volte_ua.mt6765 u:object_r:volte_ua_exec:s0
 /(system\/vendor|vendor)/bin/volte_imsm_93.mt6765 u:object_r:volte_imsm_93_exec:s0
 /(system\/vendor|vendor)/bin/volte_md_status.mt6765 u:object_r:volte_md_status_exec:s0
+/(system\/vendor|vendor)/bin/volte_imcb.angelicain u:object_r:volte_imcb_exec:s0
+/(system\/vendor|vendor)/bin/volte_stack.angelicain u:object_r:volte_stack_exec:s0
+/(system\/vendor|vendor)/bin/volte_ua.angelicain u:object_r:volte_ua_exec:s0
