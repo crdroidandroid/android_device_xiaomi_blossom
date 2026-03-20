@@ -10,6 +10,8 @@ BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 
 DEVICE_PATH := device/xiaomi/blossom
 
+MALLOC_LOW_MEMORY := true
+
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/xiaomi/blossom
 BOARD_PREBUILT_KERNEL_HEADERS := device/xiaomi/blossom-kernel/headers
