@@ -62,6 +62,10 @@ function blob_fixup() {
         vendor/bin/hw/android.hardware.thermal@2.0-service.mtk)
             "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
             ;;
+        vendor/lib/libsysenv.so | vendor/lib*/libnvram.so)
+            [ "$2" = "" ] && return 0
+            grep -q "libshim_base.so" "${2}" || "${PATCHELF}" --add-needed "libshim_base.so" "${2}"
+            ;;
         vendor/bin/mnld | vendor/lib*/libaalservice.so | vendor/lib*/libcam.utils.sensorprovider.so)
             grep -q "libshim_sensors.so" "$2" || "$PATCHELF" --add-needed "libshim_sensors.so" "$2"
             ;;
