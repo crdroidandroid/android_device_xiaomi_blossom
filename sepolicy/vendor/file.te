@@ -27,3 +27,6 @@ type proc_tp, fs_type, proc_type;
 
 # Fingerprint 
 type sysfs_fingerprint, fs_type, sysfs_type;
+
+# Audio
+type vendor_audio_prop, vendor_property_type;

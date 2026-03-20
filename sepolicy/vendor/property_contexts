@@ -1,2 +1,5 @@
 # Camera
 persist.vendor.camera.                                  u:object_r:vendor_mtk_camera_prop:s0
+# Audio
+persist.vendor.audio.                                   u:object_r:vendor_audio_prop:s0
+ro.vendor.audio.                                         u:object_r:vendor_audio_prop:s0
