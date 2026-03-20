@@ -15,6 +15,9 @@ PRODUCT_ENFORCE_VINTF_MANIFEST := false
 # MIUICAMERA
 $(call inherit-product, vendor/xiaomi/miuicamera/MiuiCamera.mk)
 
+# Lunaris Dolby 
+$(call inherit-product, hardware/dolby/dolby.mk)
+
 # Disable kernel requirement enforcement for VINTF compatibility
 
 PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
