@@ -241,6 +241,11 @@ PRODUCT_PACKAGES += \
     libutils-v32 \
     libui-v32
 
+# VNDK v32 vndk-sp libs required by libui-v32 (referenced by plain DT_NEEDED names)
+PRODUCT_COPY_FILES += \
+    prebuilts/vndk/v32/arm64/arch-arm-armv8-a/shared/vndk-sp/android.hardware.common-V2-ndk_platform.so:$(TARGET_COPY_OUT_VENDOR)/lib/android.hardware.common-V2-ndk_platform.so \
+    prebuilts/vndk/v32/arm64/arch-arm-armv8-a/shared/vndk-sp/android.hardware.graphics.common-V2-ndk_platform.so:$(TARGET_COPY_OUT_VENDOR)/lib/android.hardware.graphics.common-V2-ndk_platform.so
+
 # Wi-Fi
 PRODUCT_PACKAGES += \
     wpa_supplicant \
