@@ -241,10 +241,6 @@ PRODUCT_PACKAGES += \
     libutils-v32 \
     libui-v32
 
-PRODUCT_COPY_FILES += \
-    prebuilts/vndk/v32/arm64/arch-arm-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libutils-v32.so \
-    prebuilts/vndk/v32/arm64/arch-arm64-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libutils-v32.so
-
 # Wi-Fi
 PRODUCT_PACKAGES += \
     wpa_supplicant \
